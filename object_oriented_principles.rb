@@ -11,28 +11,41 @@ class Animal
     end
 end
 
-Dog = Animal.new("Dog", "woof")
+dog = Animal.new("Dog", "woof")
 dog.speak
 
 #Abstraction
 class Student
-    def initialize(name, exam_1, exam_2)
-        @name = name
-        @exam_1 = exam_1
-        @exam_2 = exam_2
+    def initialize(name, grades)
+      @name = name
+      @grades = grades
     end
-
+  
     def calculate_grade
-        compute_grade
+      compute_math + compute_eng
+    end
+  
+    private
+  
+    def compute_math()
+        compute_weighted_average(@grades[:math], 0.3)
+    end
+  
+    def compute_eng()
+        compute_weighted_average(@grades[:eng], 0.7)
     end
 
     private
 
-    def compute_grade
-        (exam_1 * 0.3) + (exam_2 * 0.7)
-    end
+    def compute_weighted_average(subject_scores, weight)
+        total_subject = subject_scores.reduce(:+).to_f
+        average_subject = total_subject / subject_scores.length
+        average_subject * weight
+      end
+  end
 
-end
+  juan = Student.new("Juan", {:math => [90, 95], :eng => [90, 85,78]})
+  puts juan.calculate_grade
 
 
 ##Polymorphism
@@ -45,17 +58,21 @@ class Human
     end
 end
 
-class Spanish
+class Adult
     def speak
         super
-        puts "Hola!"
+        puts "Hello!"
+    end
+
+    def run
+        puts "Starts to run..."
     end
 end
 
-class Filipino
+class Baby
     def speak
         super
-        "Kamusta!"
+        "Babada!"
     end
 end
 
