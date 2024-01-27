@@ -21,7 +21,7 @@ class Student
       @grades = grades
     end
   
-    def calculate_grade
+    def calculate_total_grade
       compute_math + compute_eng
     end
   
@@ -55,6 +55,10 @@ class Student
 class Human
     def speak
         puts "...starts to speak."
+    end
+
+    def breathe
+        puts "...is breathing."
     end
 end
 
