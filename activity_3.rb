@@ -5,8 +5,8 @@ def find_smallest_int(arr)
 
   smallest = arr[0]
 
-  arr[1..-1].each do |element|
-    smallest = element if element < smallest
+  arr[1..-1].each do |integer|
+    smallest = integer if integer < smallest
   end
 
   smallest
