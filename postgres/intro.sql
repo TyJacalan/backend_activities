@@ -3,7 +3,7 @@ CREATE TABLE students (
     first_name character(50) NOT NULL,
     middle_name character(50),
     last_name character(50) NOT NULL,
-    age INTEGER NOT NULL,
+    age numeric(3,0) NOT NULL,
     location  character(100) NOT NULL
 )
 
@@ -18,3 +18,5 @@ VALUES(1, 'Juan', 'Cruz', 18,'Manila'),
 UPDATE students
 SET first_name = 'Ivan', middle_name = 'Ingram', last_name = 'Howard', age = 25, location = 'Bulacan'
 WHERE id = 1;
+
+
