@@ -21,14 +21,6 @@ class User
     @ip_address = ip_address
   end
 
-  protected
-
-  def login
-    puts "User logged in. IP address: #{@ip_address}"
-  end
-
-  private
-
   def change_username(new_username)
     @username = new_username
     puts "Username changed for #{@username}."
@@ -38,6 +30,13 @@ class User
     @password = new_password
     puts "Password changed for #{@username}."
   end
+
+  protected
+
+  def login
+    puts "User logged in. IP address: #{@ip_address}"
+  end
+
 end
 
 class Admin < User
@@ -47,15 +46,6 @@ class Admin < User
     login
   end
 
-  def change_username(new_username)
-    @username = new_username
-    puts "Username changed for #{@username}."
-  end
-
-  def change_password(new_password)
-    @password = new_password
-    puts "Password changed for #{@username}."
-  end
 end
 
 class Buyer < User
