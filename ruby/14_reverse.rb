@@ -1,15 +1,15 @@
 def reverse_string(str)
-  return p "Must be a string" unless str.is_a?(String)
+  return "Must be a string" unless str.is_a?(String)
 
-  reverse = []
+  reverse = ''
 
-  str.chars.each do |s|
-    reverse.unshift(s)
+  str.each_char do |s|
+    reverse = s + reverse
   end
 
-  p reverse
+  reverse
 end
 
-reverse_string("hello")
-reverse_string(1)
-reverse_string(["hello", "world"])
+p reverse_string("hello")
+p reverse_string(1)
+p reverse_string(["hello", "world"])
